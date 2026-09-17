@@ -1,1 +1,175 @@
-<h1>My Engineering Portfolio</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCodeUTD | Computer Engineering Portfolio</title>
+
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>KCodeUTD</h1>
+        <p>Computer Engineering Graduate</p>
+        <button id="theme-btn">Switch to Dark Mode</button>
+    </header>
+
+    <div class="container">
+        <!-- Profile Card Section-->
+        <div class = "profile-card">
+            <div class = "profile-image-container">
+                <!-- Placeholder image: We will use a cute illustration for now -->
+                 <img src = "https://dicebear.com" alt = "KCodeUTD Profile Picture" class = "profile-img">
+            </div>
+            <div class = "profile-text">
+                <h2>Hi, I'm KCodeUTD! ✨</h2>
+                <p>I'm a recent <strong>Computer Engineering</strong> graduate passionate about creating innovative solutions at the intersection of hardware and software.</p>
+                <div class = "profile-badges">
+                    <span class = "badge badge-hardware">⚡ Hardware Design</span>
+                    <span class = "badge badge-software">🖥️ Software Development</span>
+                </div>
+            </div>
+        </div>        
+        
+        <h2>Featured Engineering Projects</h2>
+        <div class = "project-grid">
+            <!-- Card 1: Aerial Vision Speed System -->
+             <div class = "project-card">
+                <span class = "project-tag tag-software">🖥️ Software</span>
+                <h3>Aerial Vision Speed System</h3>
+
+                <!-- 1. The Hook -->
+                 <p>A real-time speed detection system using a drone and computer vision.</p>
+
+                 <!-- 2. The Engineering Action -->
+                 <ul>
+                    <li>Collaborated with a multidisciplinary team to implement vehicle detection and achieve ±1 mph speed-estimation accuracy.</li>
+                    <li>Assisted in flying the drone and recording traffic footage across varied road geometries to validate system robustness.</li>
+                    <li>Applied structured problem-solving and clear communication to debug model behavior, refine calibration, and meet project milestones.</li>
+                 </ul>
+
+                 <!-- 3. The Spec Sheet -->
+                  <div class = "tech-stack">
+                    <span>Python</span>
+                  </div>
+
+                  <div class = "project-links">
+                    <a href = "https://github.com" target = "_blank" class = "btn btn-primary">💻 View Firmware Code</a>
+                </div>
+             </div>
+
+            <!-- CARD 2: Pokémon Database -->
+            <div class = "project-card">
+                <span class = "project-tag tag-software">🖥️ Software</span>
+                <h3>Pokémon Database</h3>
+
+                <!-- 1. The Hook -->
+                <p>A comprehensive database for storing and retrieving information about various Pokémon species.</p>
+
+                <!-- 2. The Engineering Action (Short and punchy bullet fragments)-->
+                 <ul>
+                    <li>Created a website that retrieves Pokémon data including Pokédex ID, evolution paths, attack lists, and competitive tier rankings.</li>
+                    <li>Built the database using HeidiSQL and configured networking through ZeroTier.</li>
+                 </ul>
+                
+                <!-- 3. The Spec Sheet -->
+                <div class = "tech-stack">
+                    <span>SQL</span>
+                    <span>HeidiSQL</span>
+                    <span>ZeroTier</span>
+                </div>
+
+                <!-- Video Demo Container-->
+                <div class = "video-container">
+                    <iframe src = "https://www.youtube.com" title = "Project Demo" allowfullscreen></iframe>
+                </div>
+
+                <div class = "project-links">
+                    <a href = "https://github.com" target = "_blank" class = "btn btn-primary">💻 View Firmware Code</a>
+                </div>
+            </div>
+
+            <!-- CARD 3: Raspberry Pi Security Camera -->
+            <div class = "project-card">
+                <span class = "project-tag tag-hardware">⚡ Hardware</span>
+                <h3>Raspberry Pi Security Camera with Face Recognition</h3>
+
+                <!-- 1. The Hook-->
+                <p>Built a Raspberry Pi–based security camera using an ultrasonic sensor and Camera Module 2.</p>
+
+                <!-- 2. The Engineering Action (Short and punchy bullet fragments)-->
+                <ul>
+                    <li>Implemented face recognition with OpenCV to identify individuals appearing on camera.</li>
+                    <li>Automated image capture and storage by uploading photos to an AWS S3 bucket.</li>
+                    <li>Presented a live demo with two team members showcasing system functionality.</li>
+                </ul>
+
+                <!-- 3. The Spec Sheet-->
+                <div class = "tech-stack">
+                    <span>Raspberry Pi</span>
+                    <span>OpenCV</span>
+                    <span>AWS S3</span>
+                    <span>Python</span>
+                </div>
+
+                <!-- Image Container -->
+                <div class = "project-img-container">
+                    <!-- Replace placeholder with real file later-->
+                     <img src = "https://dicebear.com" alt = "Raspberry Pi Security Camera" class = "project-img">
+                </div>
+
+                <div class = "project-links">
+                    <a href = "#" target = "_blank" class = "btn btn-secondary">📁 Download Schematics (PDF)</a>
+                </div>
+            </div>
+
+            <!-- CARD 4: Car Rental System -->
+            <div class = "project-card">
+                <span class = "project-tag tag-software">🖥️ Software</span>
+                <h3>Car Rental System</h3>
+
+                <!-- 1. The Hook-->
+                <p>Designed and implemented a car rental management system.</p>
+
+                <!-- 2. The Engineering Action (Short and punchy bullet fragments)-->
+                <ul>
+                    <li>Developed a car rental management program using agile methodologies, enabling users to rent, return, and pay for vehicles.</li>
+                    <li>Delivered iterative builds to a mock client and incorporated feedback into updated versions.</li>
+                </ul>
+
+                <div class = "tech-stack">
+                    <span>Agile Development</span>
+                    <span>C++</span>
+                </div>
+
+                <div class = "project-links">
+                    <a href = "https://github.com" target = "_blank" class = "btn btn-primary">💻 View Firmware Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Contact Section -->
+    <footer>
+        <div class="footer-content">
+            <h3>Let's Connect! ✨</h3>
+            <p>I am currently open to junior engineering opportunities, project collaborations, or just chatting about cool hardware design!</p>
+            
+            <div class="footer-links">
+                <a href="https://linkedin.com" target="_blank" class="footer-badge badge-linkedin">💼 LinkedIn</a>
+                <a href="mailto:your.email@example.com" class="footer-badge badge-email">✉️ Email Me</a>
+                <a href="https://github.com" target="_blank" class="footer-badge badge-github">💻 GitHub</a>
+            </div>
+            
+            <p class="copyright">© 2026 KCodeUTD • Built with code & lots of strawberry milk 🍓</p>
+        </div>
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

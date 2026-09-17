@@ -1,0 +1,401 @@
+/* Custom Global Variables (Theme Palette) */
+:root {
+    --bg-color: #FFF5F7;        /* Soft strawberry milk pink */
+    --card-bg: #FFFFFF;         /* Crisp white cards */
+    --text-color: #4A3E41;      /* Deep cocoa brown (softer than harsh black) */
+    --primary-color: #FFB7C5;   /* Pastel sakura pink */
+    --accent-color: #98E2D6;    /* Kawaii mint/teal accent */
+    --border-color: #FFE1E6;    /* Gentle pinkish borders */
+    --radius: 16px;             /* Bubbly, friendly rounded corners */
+}
+
+/* Dark Mode Palette (Cyberpunk Strawberry) */
+body.dark-theme {
+    --bg-color: #2D1B22;        /* Dark plum / deep berry black */
+    --card-bg: #3D2630;         /* Darker warm berry cards */
+    --text-color: #FFF0F3;      /* Cream text */
+    --primary-color: #FF8EA3;   /* Vivid pastel pink */
+    --accent-color: #64FFDA;    /* High-contrast electric teal */
+    --border-color: #523441;    /* Deep berry borders */
+}
+
+/* Base Adjustments */
+body {
+    /*font-family: 'Quicksand', 'Segoe UI', sans-serif;  Friendly, professional font */
+    font-family: 'Quicksand', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    background-color: var(--card-bg);
+    border-bottom: 4px solid var(--primary-color);
+    text-align: center;
+    padding: 3rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: var(--text-color);
+    letter-spacing: -0.5px;
+}
+
+header p {
+    margin: 5px 0 0 0;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+/* Container & Grid Setup */
+.container {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+h2 {
+    color: var(--text-color);
+    border-bottom: 3px dotted var(--primary-color);
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 2rem;
+}
+
+/* Cute Card Layouts */
+.project-card {
+    background: var(--card-bg);
+    border: 3px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 2rem;
+    flex: 1 1 calc(50% - 25px);
+    box-sizing: border-box;
+    min-width: 300px;
+    box-shadow: 0 8px 0 var(--border-color); /* Kawaii thick pop-art shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 0 var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: var(--text-color);
+    font-size: 1.3rem;
+}
+
+/* Keep elements inside cards rounded */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin-top: 15px;
+    border-radius: calc(var(--radius) - 4px);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Cute Interaction Button */
+#theme-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    font-family: inherit;
+    background-color: var(--primary-color);
+    color: #FFF;
+    border: 2px solid transparent;
+    border-radius: var(--radius);
+    cursor: pointer;
+    margin-top: 15px;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.05);
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#theme-btn:hover {
+    background-color: var(--accent-color);
+    color: #4A3E41;
+}
+
+#theme-btn:active {
+    transform: translateY(2px);
+}
+
+/* Profile Card Layout */
+.profile-card {
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    border: 3px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 8px 0 var(--border-color);
+    gap: 30px;
+    transition: background-color 0.3s ease;
+}
+
+/* Make it stack on smaller mobile screens automatically */
+@media (max-width: 650px) {
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Circular Profile Picture Styling */
+.profile-image-container {
+    flex-shrink: 0;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%; /* Perfect circle */
+    border: 4px solid var(--primary-color);
+    background-color: var(--bg-color);
+    display: block;
+    object-fit: cover;
+}
+
+.profile-text h2 {
+    margin-top: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Professional Engineering Badges */
+.profile-badges {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+/* Centers badges if screen scales down to mobile layout */
+@media (max-width: 650px) {
+    .profile-badges {
+        justify-content: center;
+    }
+}
+
+.badge {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.badge-software {
+    background-color: #FFE5EC;
+    color: #D90429;
+}
+
+body.dark-theme .badge-software {
+    background-color: #522530;
+    color: #FF8EA3;
+}
+
+.badge-hardware {
+    background-color: #E2ECE9;
+    color: #2D6A4F;
+}
+
+body.dark-theme .badge-hardware {
+    background-color: #203A30;
+    color: #64FFDA;
+}
+
+/* Project Tags (Top of Cards) */
+.project-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.2rem 0.6rem;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+}
+.tag-software { background-color: #FFE5EC; color: #D90429; }
+.tag-hardware { background-color: #E2ECE9; color: #2D6A4F; }
+
+body.dark-theme .tag-software { background-color: #522530; color: #FF8EA3; }
+body.dark-theme .tag-hardware { background-color: #203A30; color: #64FFDA; }
+
+/* Tech Stack Tags Grid */
+.tech-stack {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 0.8rem 0;
+}
+.tech-stack span {
+    font-size: 0.75rem;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+/* Project Image Handling */
+.project-img-container {
+    margin-top: 15px;
+    border-radius: calc(var(--radius) - 4px);
+    overflow: hidden;
+    border: 2px solid var(--border-color);
+    height: 180px;
+}
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Grid Action Buttons */
+.project-links {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 10px;
+}
+.btn {
+    display: inline-block;
+    text-align: center;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: var(--radius);
+    flex: 1;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+    border: 2px solid transparent;
+}
+.btn-primary {
+    background-color: var(--text-color);
+    color: var(--card-bg);
+}
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    color: #4A3E41;
+}
+.btn-secondary {
+    background-color: transparent;
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+.btn-secondary:hover {
+    background-color: var(--border-color);
+}
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* Footer Container */
+footer {
+    background-color: var(--card-bg);
+    border-top: 4px dashed var(--primary-color); /* Cute dashed separator line */
+    padding: 3rem 1rem;
+    margin-top: 5rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer-content h3 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    color: var(--text-color);
+}
+
+.footer-content p {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+}
+
+/* Footer Link Badges */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.footer-badge {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: var(--radius);
+    border: 2px solid transparent;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.05);
+}
+
+.badge-linkedin {
+    background-color: #E2ECF9;
+    color: #0A66C2;
+}
+body.dark-theme .badge-linkedin {
+    background-color: #1A365D;
+    color: #ADCCFF;
+}
+
+.badge-email {
+    background-color: #FFF0F3;
+    color: #FF5A79;
+}
+body.dark-theme .badge-email {
+    background-color: #522530;
+    color: #FF8EA3;
+}
+
+.badge-github {
+    background-color: #F1F3F5;
+    color: #212529;
+}
+body.dark-theme .badge-github {
+    background-color: #343A40;
+    color: #F8F9FA;
+}
+
+/* Hover and active states for badges */
+.footer-badge:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-color);
+}
+
+.footer-badge:active {
+    transform: translateY(1px);
+}
+
+.copyright {
+    font-size: 0.75rem !important;
+    opacity: 0.6;
+    margin-top: 2rem;
+}
