@@ -25,3 +25,42 @@ themeBtn.addEventListener('click', () => {
         localStorage.setItem('darkThemeStatus', 'disabled'); // Save preference
     }
 });
+
+// --- PROJECT FILTER LOGIC ---
+
+// 1. Select all filter buttons and all project cards
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+// 2. Listen for clicks on each individual filter button
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        
+        // Remove the 'active' background style from whatever button had it before
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add the 'active' highlight style to the button we just clicked
+        button.classList.add('active');
+        
+        // Grab the category category key (e.g., "all", "software", "hardware")
+        const targetFilter = button.getAttribute('data-filter');
+        
+        // 3. Loop through every project card on the screen
+        projectCards.forEach(card => {
+            // Look at the card's top span tag to see its type
+            const isSoftware = card.querySelector('.project-tag').classList.contains('tag-software');
+            const isHardware = card.querySelector('.project-tag').classList.contains('tag-hardware');
+            
+            // Map the layout rules
+            if (targetFilter === 'all') {
+                card.classList.remove('hide'); // Show everything
+            } else if (targetFilter === 'software' && isSoftware) {
+                card.classList.remove('hide'); // Show match
+            } else if (targetFilter === 'hardware' && isHardware) {
+                card.classList.remove('hide'); // Show match
+            } else {
+                card.classList.add('hide');    // Hide non-matching cards
+            }
+        });
+    });
+});
