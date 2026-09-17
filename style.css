@@ -81,7 +81,7 @@ h2 {
     padding: 1.5rem; /* Slightly reduced padding so text fits beautifully in 3 columns */
     
     /* THE TRICK: 100% divided by 3 is roughly 33.33% */
-    flex: 1 1 calc(33.33% - 25px); 
+    flex: 0 1 calc(33.33% - 25px); 
     
     box-sizing: border-box;
     min-width: 280px; /* Prevents cards from getting too squished on medium screens */
