@@ -449,3 +449,40 @@ body.dark-theme .badge-github {
 .project-card.hide {
     display: none !important;
 }
+
+/* --- MOBILE CAROUSEL SWIPE ONLY --- */
+
+/* This rule only kicks in when the screen width is 768px or smaller (mobile/tablets) */
+@media (max-width: 768px) {
+    
+    /* 1. Turn the container layout into a horizontal conveyor belt */
+    .project-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap; /* Prevent cards from dropping down to a new row */
+        overflow-x: auto;  /* Enable horizontal scrolling! */
+        scroll-snap-type: x mandatory; /* Makes cards snap cleanly into center place when swiped */
+        padding-bottom: 20px; /* Space for a cute custom scrollbar */
+        gap: 20px;
+    }
+
+    /* 2. Configure the individual cards to survive the belt layout */
+    .project-card {
+        flex: 0 0 85%; /* Make cards take up 85% of the viewport width so the next card peeks out */
+        scroll-snap-align: center; /* Snaps card perfectly to center of mobile screen */
+        min-width: 270px;
+    }
+
+    /* 3. Style a beautiful kawaii scrollbar for the conveyor belt */
+    .project-grid::-webkit-scrollbar {
+        height: 8px;
+    }
+    .project-grid::-webkit-scrollbar-track {
+        background: var(--card-bg);
+        border-radius: var(--radius);
+    }
+    .project-grid::-webkit-scrollbar-thumb {
+        background: var(--primary-color);
+        border-radius: var(--radius);
+    }
+}
