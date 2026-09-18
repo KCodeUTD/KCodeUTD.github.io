@@ -42,14 +42,24 @@ filterButtons.forEach(button => {
         // Add the 'active' highlight style to the button we just clicked
         button.classList.add('active');
         
-        // Grab the category category key (e.g., "all", "software", "hardware")
+        // Grab the category key (e.g., "all", "software", "hardware", "mini")
         const targetFilter = button.getAttribute('data-filter');
         
         // 3. Loop through every project card on the screen
         projectCards.forEach(card => {
-            // Look at the card's top span tag to see its type
-            const isSoftware = card.querySelector('.project-tag').classList.contains('tag-software');
-            const isHardware = card.querySelector('.project-tag').classList.contains('tag-hardware');
+            // Grab ALL tags inside this card
+            const tags = card.querySelectorAll('.project-tag');
+            
+            // Check if any tag matches the types
+            let isSoftware = false;
+            let isHardware = false;
+            let isMini = false;
+
+            tags.forEach(tag => {
+                if (tag.classList.contains('tag-software')) isSoftware = true;
+                if (tag.classList.contains('tag-hardware')) isHardware = true;
+                if (tag.classList.contains('tag-mini')) isMini = true;
+            });
             
             // Map the layout rules
             if (targetFilter === 'all') {
@@ -57,6 +67,8 @@ filterButtons.forEach(button => {
             } else if (targetFilter === 'software' && isSoftware) {
                 card.classList.remove('hide'); // Show match
             } else if (targetFilter === 'hardware' && isHardware) {
+                card.classList.remove('hide'); // Show match
+            } else if (targetFilter === 'mini' && isMini) {
                 card.classList.remove('hide'); // Show match
             } else {
                 card.classList.add('hide');    // Hide non-matching cards
