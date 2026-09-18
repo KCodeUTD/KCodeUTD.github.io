@@ -247,11 +247,11 @@ body.dark-theme .badge-hardware {
 }
 .tag-software { background-color: #FFE5EC; color: #D90429; }
 .tag-hardware { background-color: #E2ECE9; color: #2D6A4F; }
-.tag-mini { background-color: #FFF0F3; color: #FF5A79;}
+.tag-mini { background-color: #bdf2ff; color: #2b728e;}
 
-body.dark-theme .tag-software { background-color: #522530; color: #FF8EA3; }
+body.dark-theme .tag-software { background-color: hsl(334, 23%, 35%); color: #FF8EA3; }
 body.dark-theme .tag-hardware { background-color: #203A30; color: #64FFDA; }
-body.dark-theme .tag-mini { background-color: #522530; color: #FF8EA3}
+body.dark-theme .tag-mini { background-color: #4755a4; color: #aedbff}
 
 /* Tech Stack Tags Grid */
 .tech-stack {
