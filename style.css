@@ -298,6 +298,17 @@ body.dark-theme .tag-mini { background-color: #4755a4; color: #aedbff}
     border-radius: 4px;
     transition: background-color 0.2s;
     z-index: 2;
+
+    /* Start hidden and transparent */
+    opacity: 0;
+    pointer-events: none; /* Prevents invisible buttons from blocking clicks */
+    transition: opacity 0.3s ease, background-color 0.2s;
+}
+
+/* WHEN HOVERING THE CONTAINER: Reveal BOTH buttons at the same time */
+.project-img-container:hover .slider-btn {
+    opacity: 1;
+    pointer-events: auto; /* Re-enables clicking when visible */
 }
 
 .slider-btn:hover {
