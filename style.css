@@ -271,6 +271,7 @@ body.dark-theme .tag-mini { background-color: #4755a4; color: #aedbff}
 
 /* Project Image Handling */
 .project-img-container {
+    position: relative;
     margin-top: 15px;
     border-radius: calc(var(--radius) - 4px);
     overflow: hidden;
@@ -286,7 +287,7 @@ body.dark-theme .tag-mini { background-color: #4755a4; color: #aedbff}
 /* Arrow styling */
 .slider-btn {
     position: absolute;
-    top: 83%;
+    top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
