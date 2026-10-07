@@ -286,7 +286,7 @@ body.dark-theme .tag-mini { background-color: #4755a4; color: #aedbff}
 /* Arrow styling */
 .slider-btn {
     position: absolute;
-    top: 50%;
+    top: 83%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
