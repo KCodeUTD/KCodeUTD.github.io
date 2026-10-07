@@ -48,6 +48,34 @@ function changeImage(direction) {
     document.getElementById("project-img").src = projectImages[currentImageIndex];
 }
 
+// --- Mobile Touch Swipe Support to Change Photos ---
+const imageContainer = document.querySelector('.project-img-container');
+let touchStartX = 0;
+let touchEndX = 0;
+
+imageContainer.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+imageContainer.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipeGesture();
+});
+
+function handleSwipeGesture() {
+    const minSwipeDistance = 50; // Minimum pixels required to register a swipe
+    
+    if (touchEndX < touchStartX - minSwipeDistance) {
+        // Swiped left -> go to next image
+        changeImage(1);
+    } 
+    
+    if (touchEndX > touchStartX + minSwipeDistance) {
+        // Swiped right -> go to previous image
+        changeImage(-1);
+    }
+}
+
 // --- PROJECT FILTER LOGIC ---
 
 // 1. Select all filter buttons and all project cards
