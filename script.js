@@ -48,33 +48,18 @@ function changeImage(direction) {
     document.getElementById("project-img").src = projectImages[currentImageIndex];
 }
 
-// --- Mobile Touch Swipe Support to Change Photos ---
+// --- Tap-to-Change Photo Support (Works for both mobile taps and mouse clicks) ---
 const imageContainer = document.querySelector('.project-img-container');
-let touchStartX = 0;
-let touchEndX = 0;
 
-imageContainer.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-});
-
-imageContainer.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipeGesture();
-});
-
-function handleSwipeGesture() {
-    const minSwipeDistance = 50; // Minimum pixels required to register a swipe
-    
-    if (touchEndX < touchStartX - minSwipeDistance) {
-        // Swiped left -> go to next image
-        changeImage(1);
-    } 
-    
-    if (touchEndX > touchStartX + minSwipeDistance) {
-        // Swiped right -> go to previous image
-        changeImage(-1);
+imageContainer.addEventListener('click', (e) => {
+    // If the user clicked the arrow buttons directly, let the buttons handle it
+    if (e.target.classList.contains('slider-btn')) {
+        return;
     }
-}
+    
+    // Otherwise, tapping anywhere else on the image advances to the next photo
+    changeImage(1);
+});
 
 // --- PROJECT FILTER LOGIC ---
 
