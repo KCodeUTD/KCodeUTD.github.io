@@ -26,6 +26,28 @@ themeBtn.addEventListener('click', () => {
     }
 });
 
+// Array of your photo paths for this specific project
+const projectImages = [
+    "Project-Files-and-Photos/Raspberry-Pi-Security-Camera-Photos-and-Files/Kinsey-Identification.jpg",
+    "Project-Files-and-Photos/Raspberry-Pi-Security-Camera-Photos-and-Files/Raspberry-Pi-Security-System-Schematic.png"
+];
+
+let currentImageIndex = 0;
+
+function changeImage(direction) {
+    currentImageIndex += direction;
+    
+    // Loop back around if reaching the ends
+    if (currentImageIndex < 0) {
+        currentImageIndex = projectImages.length - 1;
+    } else if (currentImageIndex >= projectImages.length) {
+        currentImageIndex = 0;
+    }
+    
+    // Update the image source in the DOM
+    document.getElementById("project-img").src = projectImages[currentImageIndex];
+}
+
 // --- PROJECT FILTER LOGIC ---
 
 // 1. Select all filter buttons and all project cards
